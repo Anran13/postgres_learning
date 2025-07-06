@@ -21,3 +21,11 @@ CREATE TABLE IF NOT EXISTS student(
    created_at TIMESTAMP NOT NULL
 );
 ```
+
+If we'd like to remove the table **student**, we can follow:
+
+```sql
+DROP TABLE IF EXISTS student CASCADE;
+```
+
+where **CASCADE** will delete all objects depending on the table **student**.
