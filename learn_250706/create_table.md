@@ -113,7 +113,7 @@ WHERE student_id > 3 AND major = 'Math'
 ORDER BY student_id DESC;
 ```
 
-## Application
+# Application
 We first import data from [URL](https://github.com/Anran13/postgres_learning/blob/main/new_table/world.csv).
 
 ### Copy column and rename it
@@ -131,12 +131,26 @@ USING data_new::DATE;
 ```
 
 ## Questions
-Based on the following statement, solve the questions!
+Based on the following statement, solve the questions! (Can ask using **Perplexity**)
 ```sql
 SELECT 洲名,國家,日期,總確診數,總死亡數,新增死亡數,總人口數 FROM world WHERE
 ```
 
 1. 查詢亞洲總共有多少人死亡
+* Solve Q1:
+```sql
+SELECT 
+--DATE_TRUNC('year', 日期) AS death_year,
+EXTRACT(YEAR FROM 日期) AS death_year,
+SUM(總死亡數) AS death_total
+FROM world
+--GROUP BY ROLLUP (DATE_TRUNC('year', 日期))
+GROUP BY ROLLUP (EXTRACT(YEAR FROM 日期))
+ORDER BY death_year NULLS LAST;
+```
+where **EXTRACT(YEAR FROM 日期)** will find only **year** information, and
+**DATE_TRUNC('year', 日期)** will find the first day of the year (full date) information (e.g. **2020-01-01 00:00:00**).
+
 2. 查詢全世界2020年的總確診數
 3. 查國家名有"阿"字,總死亡數大於10000
 4. 查詢哪個國家總確診數最多
