@@ -173,26 +173,12 @@ SELECT 洲名,國家,日期,總確診數,總死亡數,新增死亡數,總人口�
 ```
 
 1. 查詢亞洲總共有多少人死亡
-* Solve Q1:
-```sql
-SELECT 
---DATE_TRUNC('year', 日期) AS death_year,
-EXTRACT(YEAR FROM 日期) AS death_year,
-SUM(總死亡數) AS death_total
-FROM world
---GROUP BY ROLLUP (DATE_TRUNC('year', 日期))
-GROUP BY ROLLUP (EXTRACT(YEAR FROM 日期))
-ORDER BY death_year NULLS LAST;
-```
-where **EXTRACT(YEAR FROM 日期)** will find only **year** information, and
-**DATE_TRUNC('year', 日期)** will find the first day of the year (full date) information (e.g. **2020-01-01 00:00:00**).
-
 2. 查詢全世界2020年的總確診數
 3. 查國家名有"阿"字,總死亡數大於10000
 4. 查詢哪個國家總確診數最多
 5. 查詢亞洲台灣 2020-06-25 的總確診數
 6. 總死亡數最高的國家
-7. 台灣有多少人在2020確診?
+7. 台灣有多少人在2020確診
 8. 排序各國確診數
 9. 查詢每百萬確診人數
 10. 台灣哪個月死亡人數最多人
