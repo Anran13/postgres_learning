@@ -130,6 +130,42 @@ ALTER COLUMN data_new TYPE DATE
 USING data_new::DATE;
 ```
 
+## Claude (link to our container **postgres**)
+
+* Step 1. go to "File" --> "Settings"
+
+   ![step1](https://github.com/Anran13/postgres_learning/blob/main/image/claude_step1.png)
+
+* Step 2. choose "Developer" --> choose "Edit Config" 
+   
+   Note that the image in this step shows that we have successfully linked to the container, called "local_postgres" same as the connection name in **DBeaver** (We can follow the steps in [Preprocessing 2](https://github.com/Anran13/postgres_learning_250629)).
+   However, we suppose that the **Claude** does not yet link to the container, so "local_postgres" is missing.
+   
+   ![step2](https://github.com/Anran13/postgres_learning/blob/main/image/claude_step2.png)
+
+* Step 3. Open the file **claude_desktop_config.json** and enter the following statements:
+   ```
+   {
+      "mcpServers": {
+         "local_postgres": {
+            "command": "npx",
+            "args": [
+               "-y",
+               "@modelcontextprotocol/server-postgres",
+               "postgresql://postgres:raspberry@localhost:5432/postgres"
+            ]
+         }
+      }
+   }
+   ```
+
+* Step 4. re-open the **Claude** --> open the icon "Search and tools" --> choose "local_postgres"
+
+   ![step4](https://github.com/Anran13/postgres_learning/blob/main/image/claude_step4.png)
+
+* Step 5. we can finally ask **Claude** for querying Table in the box.
+
+
 ## Questions
 Based on the following statement, solve the questions! (Can ask using **Perplexity**)
 ```sql
