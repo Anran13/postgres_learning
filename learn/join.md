@@ -83,3 +83,24 @@ ALTER TABLE employee
 ADD FOREIGN KEY(sup_id) REFERENCES employee(emp_id)
 ON DELETE SET NULL;
 ```
+
+## 台鐵車站資訊
+Note that 
+  1. "Chinaese" character name should put "quotation mark".
+
+```sql
+ALTER TABLE "台鐵車站資訊" ADD PRIMARY KEY("stationCode");
+
+CREATE TABLE station_number AS
+SELECT * FROM "每日各站進出站人數2020"
+UNION ALL
+SELECT * FROM "每日各站進出站人數2021"
+UNION ALL
+SELECT * FROM "每日各站進出站人數2022"
+UNION ALL
+SELECT * FROM "每日各站進出站人數2023";
+
+ALTER TABLE station_number ADD FOREIGN KEY("staCode") REFERENCES "台鐵車站資訊"("stationCode");
+
+SELECT COUNT(*) AS total_number FROM station_number; 
+```
