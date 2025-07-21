@@ -81,3 +81,26 @@
     Choose the **Agent** and start querying some questions.
 
     **Note that we should be careful about avoiding linking the private database to Copilot!**
+
+* Install packages **python** and **jupyter** in the "python" container.
+   * construct **.ipynb** file for testing and markdown
+      * choose the **kernel** environment [image]()
+   * construct **.py** file for project [image]()
+      * choose the python environment
+        1. leave the current virtual environment
+            ```
+            conda deactivate
+            ```
+        2. cancel the auto base environment
+           ```
+           conda config --set auto_activate_base false
+           ```
+        3. initialize conda
+           ```
+           conda init --all bash
+           ```
+        4. close the current terminal and open a new one
+        5. execute the python in terminal
+           ```
+           python learn/python_250720.py
+           ```
