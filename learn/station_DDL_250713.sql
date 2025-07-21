@@ -1,10 +1,11 @@
+DROP TABLE IF EXISTS station_info, station_number CASCADE;
 -- public.台鐵車站資訊 definition
 
 -- Drop table
 
 -- DROP TABLE public.台鐵車站資訊;
 
-CREATE TABLE public.台鐵車站資訊 (
+CREATE TABLE public.station_info (
 	"stationCode" int4 NOT NULL,
 	"stationName" varchar(50) NULL,
 	"name" varchar(50) NULL,
@@ -12,7 +13,7 @@ CREATE TABLE public.台鐵車站資訊 (
 	"stationTel" varchar(50) NULL,
 	gps varchar(50) NULL,
 	"haveBike" varchar(50) NULL,
-	CONSTRAINT 台鐵車站資訊_pkey PRIMARY KEY ("stationCode")
+	CONSTRAINT station_info_pkey PRIMARY KEY ("stationCode")
 );
 
 
@@ -27,5 +28,6 @@ CREATE TABLE public.station_number (
 	"staCode" int4 NULL,
 	"gateInComingCnt" int4 NULL,
 	"gateOutGoingCnt" int4 NULL,
-	CONSTRAINT "station_number_staCode_fkey" FOREIGN KEY ("staCode") REFERENCES public.台鐵車站資訊("stationCode")
+	CONSTRAINT "station_number_staCode_fkey" FOREIGN KEY ("staCode") REFERENCES public.station_info("stationCode")
 );
+

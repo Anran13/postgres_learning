@@ -84,8 +84,8 @@
 
 * Install packages **python** and **jupyter** in the "python" container.
    * construct **.ipynb** file for testing and markdown
-      * choose the **kernel** environment [image]()
-   * construct **.py** file for project [image]()
+      * choose the **kernel** environment [image](https://github.com/Anran13/postgres_learning/blob/main/image/ipynb_env.png)
+   * construct **.py** file for project [image](https://github.com/Anran13/postgres_learning/blob/main/image/py_env.png)
       * choose the python environment
         1. leave the current virtual environment
             ```
