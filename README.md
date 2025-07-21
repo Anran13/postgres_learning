@@ -76,4 +76,8 @@
          },
      }
     ```
-    Press **start** and we can finally link to our container.
+    Press **start** and we can finally link to our container (see [image](https://github.com/Anran13/postgres_learning/blob/main/image/copilot.png)).
+    
+    Choose the **Agent** and start querying some questions.
+
+    **Note that we should be careful about avoiding linking the private database to Copilot!**
