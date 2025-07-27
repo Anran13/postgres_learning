@@ -4,8 +4,8 @@
        * We might encounter some problems due to **Windows Subsystem for Linux**. The solution can follow the images:
 
              1. kill all the relevant task in "Task Manager"
-             2. unclick the "Windows Subsystem for Linux" [step1](https://github.com/Anran13/postgres_learning/tree/main/image/wsl_step1.png)
-             3. download wsl from [github](https://github.com/microsoft/WSL/releases/) [step2](https://github.com/Anran13/postgres_learning/tree/main/image/wsl_step2.png)
+             2. unclick the "Windows Subsystem for Linux" ![step1](https://github.com/Anran13/postgres_learning/tree/main/image/wsl_step1.png)
+             3. download wsl from [github](https://github.com/microsoft/WSL/releases/) ![step2](https://github.com/Anran13/postgres_learning/tree/main/image/wsl_step2.png)
 
     * Construct a container for "miniconda" in **docker** and run
 
@@ -108,4 +108,13 @@
         5. execute the python in terminal
            ```
            python learn/python_250720.py
+           ```
+      * or we can follow the following steps:
+        1. check the virtual environment
+           ```
+           conda env list
+           ```
+        2. activate the virtual environment
+           ```
+           conda activate pydev
            ```
