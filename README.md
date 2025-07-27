@@ -1,6 +1,11 @@
 ## **Preprocessing 1** 
 * Construct a container:
     * Install the **docker** (can download from  https://docs.docker.com/)
+       * We might encounter some problems due to **Windows Subsystem for Linux**. The solution can follow the images:
+
+             1. kill all the relevant task in "Task Manager"
+             2. unclick the "Windows Subsystem for Linux" [step1](https://github.com/Anran13/postgres_learning/tree/main/image/wsl_step1.png)
+             3. download wsl from [github](https://github.com/microsoft/WSL/releases/) [step2](https://github.com/Anran13/postgres_learning/tree/main/image/wsl_step2.png)
 
     * Construct a container for "miniconda" in **docker** and run
 
